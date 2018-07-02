@@ -1,0 +1,14 @@
+<h1 class="animated fadeIn fast">Resultados para <small class="text-muted">{{termino}}</small></h1>
+<hr>
+<div class="card-columns">
+    <!-- *ngFor="let heroe of heroes; let i = index;" -->
+    <app-heroe-card [heroe]="heroe" *ngFor="let heroe of heroes; let i = index;" [idx]="heroe.idx"></app-heroe-card>
+</div>
+
+<div class="row animated fadeIn fast" *ngIf="heroes.length == 0">
+    <div class="col-md-12">
+      <div class="alert alert-danger" role="alert">
+        No se encontraron héroes con el término: {{ termino }}
+      </div>
+    </div>
+  </div>
